@@ -17,7 +17,7 @@
     <div id="croppie-container"></div>
     <button id="crop-button">Crop</button>
     <div>
-      <input id="input-text" type="text" placeholder="Playlist Name" />
+      <input id="input-text" type="text" onclick="selectText(this)" placeholder="Playlist Name" />
     </div>
 
     <div
@@ -33,7 +33,7 @@
       id="playlist-cover"
     >
       <div>
-        <img src="img/this is.png" alt="" />
+        <img src="img/this is.png" alt="" style="width: 100%"/>
       </div>
       <div style="display: flex; justify-content: center">
         <h1
@@ -45,7 +45,7 @@
             padding-bottom: 17px;
             letter-spacing: -1.5px;
             font-weight: 1000px;
-            color: white
+            color: rgb(0, 0, 0, 0)
           "
         >
           A
@@ -72,17 +72,17 @@
             margin-top: 3px;
             padding-bottom: 17px;
             letter-spacing: -1.5px;
-            color: white;
+            color: rgb(0, 0, 0, 0);
             font-weight: 1000px;
           "
         >
           A
         </h1>
       </div>
-      <img id="cropped-image" style="margin-top: 4px"/>
+      <img id="cropped-image" style="margin-top: 4px" style="width: 101%; height: 101%"/>
     </div>
-
     <button id="download-button">Download as PNG</button>
+<p>don't buy me coffee</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
     <script src="script.js"></script>

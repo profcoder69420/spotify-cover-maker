@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         croppieInstance.destroy();
       }
       croppieInstance = new Croppie(croppieContainer, {
-        viewport: { width: 296, height: 177 },
+        viewport: { width: 297, height: 177 },
         boundary: { width: 400, height: 300 },
         showZoomer: true,
       });
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const link = document.createElement("a");
         link.href = dataUrl;
         link.download = "content.png";
+
         link.click();
       })
       .catch(function (error) {
@@ -60,3 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+function selectText(element) {
+  element.select();
+}
