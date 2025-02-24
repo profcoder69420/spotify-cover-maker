@@ -44,6 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
+  const inputBrat = document.getElementById("input-brat");
+  const bratName = document.getElementById("brat-name");
+
+  inputBrat.addEventListener("input", function () {
+    bratName.innerHTML = `${inputBrat.value}`;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const downloadButton = document.getElementById("download-button");
   const content = document.getElementById("playlist-cover");
   downloadButton.addEventListener("click", function () {
@@ -52,12 +61,31 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (dataUrl) {
         const link = document.createElement("a");
         link.href = dataUrl;
-        link.download = "content.png";
+        link.download = `this-is.png`;
 
         link.click();
       })
       .catch(function (error) {
-        alert("You haven't inserted anything in you faggot");
+        alert("You haven't inserted anything");
+      });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const downloadBratButton = document.getElementById("download-brat-button");
+  const bratContent = document.getElementById("brat-cover");
+  downloadBratButton.addEventListener("click", function () {
+    domtoimage
+      .toPng(bratContent)
+      .then(function (dataUrl) {
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "brat.png";
+
+        link.click();
+      })
+      .catch(function (error) {
+        alert("You haven't inserted anything");
       });
   });
 });

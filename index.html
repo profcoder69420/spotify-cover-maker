@@ -13,11 +13,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </head>
   <body>
+    <!-- this is -->
     <input type="file" id="upload" accept="image/*" />
     <div id="croppie-container"></div>
     <button id="crop-button">Crop</button>
     <div>
-      <input id="input-text" type="text" onclick="selectText(this)" placeholder="Playlist Name" />
+      <input
+        id="input-text"
+        type="text"
+        onclick="selectText(this)"
+        placeholder="Playlist Name"
+      />
     </div>
 
     <div
@@ -32,7 +38,7 @@
       id="playlist-cover"
     >
       <div>
-        <img src="img/this is.png" alt="" style="width: 100%"/>
+        <img src="img/this is.png" alt="" style="width: 100%" />
       </div>
       <div style="display: flex; justify-content: center">
         <h1
@@ -44,7 +50,7 @@
             padding-bottom: 17px;
             letter-spacing: -1.5px;
             font-weight: 1000px;
-            color: rgb(0, 0, 0, 0)
+            color: rgb(0, 0, 0, 0);
           "
         >
           A
@@ -53,7 +59,7 @@
           id="playlist-name"
           style="
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 0;
             margin-top: 3px;
             padding-bottom: 17px;
@@ -78,10 +84,42 @@
           A
         </h1>
       </div>
-      <img id="cropped-image" style="margin-top: 4px"/>
+      <img id="cropped-image" style="margin-top: 4px" />
     </div>
-    <button id="download-button">Download as PNG</button>
-<p>don't buy me coffee</p>
+    <button id="download-button">Download "This is" cover as PNG</button>
+    <!-- brat -->
+    <!-- brat -->
+    <div>
+      <input
+        id="input-brat"
+        type="text"
+        onclick="selectText(this)"
+        placeholder="brat"
+      />
+    </div>
+    <div
+      style="
+        height: 300px;
+        width: 300px;
+        background: RGB(138, 206, 0);
+        display: flex;
+        align-items: center;
+      "
+      id="brat-cover"
+    >
+      <div
+        style="
+          width: 300px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <h1 id="brat-name" style="text-align: justify">brat</h1>
+      </div>
+    </div>
+    <button id="download-brat-button">Download "brat" ahh cover as PNG</button>
+    <p>don't buy me coffee</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
     <script src="script.js"></script>

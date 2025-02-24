@@ -10,6 +10,10 @@
   font-family: "Circular Black";
   src: url(font/circular-std-2.ttf);
 }
+@font-face {
+  font-family: "Arial Narrow";
+  src: url(font/arialnarrow.ttf);
+}
 
 body {
   -moz-user-select: none !important;
@@ -31,7 +35,12 @@ body {
   letter-spacing: px;
   font-family: "Circular Black";
 }
-
+#brat-name {
+  font-family: "Arial Narrow";
+  font-size: 40px;
+  filter: blur(1px);
+  font-stretch: expanded;
+}
 #cropped-image {
   margin-top: 8px;
 }
