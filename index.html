@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Spotify Cover Maker</title>
+    <title>Playlist Cover Maker</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"
@@ -13,120 +13,140 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </head>
   <body>
+    <div class="wrapper">
+      <h2 id="tabs-title" style="text-align: center;">Spotify playlist cover maker</h2>
+
+      <div class="tabs-container">
+        <ul aria-labelledby="tabs-title">
+          <li><a id="tab-1" href="#advertising">This is</a></li>
+          <p style="justify-content: center;">  </p>
+          <li><a id="tab-2" href="#social-media"> Brat </a></li>
+        </ul>
+
+        <div class="tabs__panels flow">
+          <div id="advertising" aria-labelledby="tab-1">
+            <!-- this is -->
+            <input type="file" id="upload" accept="image/*" />
+            <div id="croppie-container"></div>
+            <button id="crop-button">Crop</button>
+            <div>
+              <input
+                id="input-text"
+                type="text"
+                onclick="selectText(this)"
+                placeholder="Playlist Name"
+              />
+            </div>
+            <div
+              style="
+                height: 300px;
+                width: 300px;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              "
+              id="playlist-cover"
+            >
+              <div>
+                <img src="img/this is.png" alt="" style="width: 100%" />
+              </div>
+              <div style="display: flex; justify-content: center">
+                <h1
+                  style="
+                    text-align: center;
+                    font-size: 30px;
+                    margin-bottom: 0;
+                    margin-top: 3px;
+                    padding-bottom: 17px;
+                    letter-spacing: -1.5px;
+                    font-weight: 1000px;
+                    color: rgb(0, 0, 0, 0);
+                  "
+                >
+                  A
+                </h1>
+                <h1
+                  id="playlist-name"
+                  style="
+                    text-align: center;
+                    font-size: 28px;
+                    margin-bottom: 0;
+                    margin-top: 3px;
+                    padding-bottom: 17px;
+                    letter-spacing: -1px;
+                    font-weight: 1000px;
+                  "
+                >
+                  Playlist Name
+                </h1>
+                <h1
+                  style="
+                    text-align: center;
+                    font-size: 30px;
+                    margin-bottom: 0;
+                    margin-top: 3px;
+                    padding-bottom: 17px;
+                    letter-spacing: -1.5px;
+                    color: rgb(0, 0, 0, 0);
+                    font-weight: 1000px;
+                  "
+                >
+                  A
+                </h1>
+              </div>
+              <img id="cropped-image" style="margin-top: 4px" />
+            </div>
+            <button id="download-button">
+              Download "This is" cover as PNG
+            </button>
+          </div>
+          <div id="social-media" aria-labelledby="tab-2">
+            <div>
+              <input
+                id="input-brat"
+                type="text"
+                onclick="selectText(this)"
+                placeholder="brat"
+              />
+            </div>
+            <div
+              style="
+                height: 300px;
+                width: 300px;
+                background: RGB(138, 206, 0);
+                display: flex;
+                align-items: center;
+              "
+              id="brat-cover"
+            >
+              <div
+                style="
+                  width: 300px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <h1 id="brat-name" style="text-align: justify">brat</h1>
+              </div>
+            </div>
+            <button id="download-brat-button">
+              Download "brat" ahh cover as PNG
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="body">
-      <!-- this is -->
-      <input type="file" id="upload" accept="image/*" />
-      <div id="croppie-container"></div>
-      <button id="crop-button">Crop</button>
-      <div>
-        <input
-          id="input-text"
-          type="text"
-          onclick="selectText(this)"
-          placeholder="Playlist Name"
-        />
-      </div>
-  
-      <div
-        style="
-          height: 300px;
-          width: 300px;
-          background: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-        id="playlist-cover"
-      >
-        <div>
-          <img src="img/this is.png" alt="" style="width: 100%" />
-        </div>
-        <div style="display: flex; justify-content: center">
-          <h1
-            style="
-              text-align: center;
-              font-size: 30px;
-              margin-bottom: 0;
-              margin-top: 3px;
-              padding-bottom: 17px;
-              letter-spacing: -1.5px;
-              font-weight: 1000px;
-              color: rgb(0, 0, 0, 0);
-            "
-          >
-            A
-          </h1>
-          <h1
-            id="playlist-name"
-            style="
-              text-align: center;
-              font-size: 28px;
-              margin-bottom: 0;
-              margin-top: 3px;
-              padding-bottom: 17px;
-              letter-spacing: -1px;
-              font-weight: 1000px;
-            "
-          >
-            Playlist Name
-          </h1>
-          <h1
-            style="
-              text-align: center;
-              font-size: 30px;
-              margin-bottom: 0;
-              margin-top: 3px;
-              padding-bottom: 17px;
-              letter-spacing: -1.5px;
-              color: rgb(0, 0, 0, 0);
-              font-weight: 1000px;
-            "
-          >
-            A
-          </h1>
-        </div>
-        <img id="cropped-image" style="margin-top: 4px" />
-      </div>
-      <button id="download-button">Download "This is" cover as PNG</button>
-      <!-- brat -->
-      <!-- brat -->
-      <div>
-        <input
-          id="input-brat"
-          type="text"
-          onclick="selectText(this)"
-          placeholder="brat"
-        />
-      </div>
-      <div
-        style="
-          height: 300px;
-          width: 300px;
-          background: RGB(138, 206, 0);
-          display: flex;
-          align-items: center;
-        "
-        id="brat-cover"
-      >
-        <div
-          style="
-            width: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          "
-        >
-          <h1 id="brat-name" style="text-align: justify">brat</h1>
-        </div>
-      </div>
-      <button id="download-brat-button">Download "brat" ahh cover as PNG</button>
+
       <p>don't buy me coffee</p>
-  
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
       <script src="script.js"></script>
-
     </div>
     <p>not on phone yet lol</p>
   </body>
-
 </html>

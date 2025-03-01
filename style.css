@@ -56,8 +56,78 @@ body {
 .color:hover {
   opacity: 0.5;
 }
+
+[role="tablist"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+[aria-selected="true"] {
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.5em;
+  color: orangered;
+}
+
+/* extra styling to make the tabs look better that wasn't in the video */
+.tabs-container {
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  background: hsl(0 0% 50% / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: min(500px);
+  margin-inline: auto;
+}
+
+.site-title {
+  font-size: var(--fs-900);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: var(--fs-800);
+  line-height: 1.1;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 @media screen and (max-width: 1000px) {
-  #body {
+  .wrapper {
     display: none;
   }
+}
+#tab-1 {
+  text-decoration: none;
+}
+#tab-2 {
+  text-decoration: none;
+}
+body {
+  font-family: "Poppins Bold";
+}
+#input-text, #input-brat,
+#crop-button, #download-button, #download-brat-button {
+  font-family: "Poppins Bold";
 }
