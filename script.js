@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         croppieInstance.destroy();
       }
       croppieInstance = new Croppie(croppieContainer, {
-        viewport: { width: 300, height: 168 },
+        viewport: { width: 300, height: 177 },
         boundary: { width: 400, height: 300 },
         showZoomer: true,
       });
